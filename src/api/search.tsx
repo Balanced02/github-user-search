@@ -9,4 +9,4 @@ type QueryType = {
 };
 
 export const SearchUser = (queryObj: QueryType) =>
-  http.get<Array<UserData>>(`/search/users?${objectToQueryString(queryObj)}`);
+  http.get<UserData>(`/search/users?${objectToQueryString(queryObj)}`);

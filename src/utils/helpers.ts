@@ -1,0 +1,1 @@
+export const paginationLength = (totalSize: number, limit: number) => Math.ceil(totalSize / limit)

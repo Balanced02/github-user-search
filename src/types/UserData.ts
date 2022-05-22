@@ -1,4 +1,4 @@
-export default interface UserData {
+export type UserType = {
   login: string;
   id: number;
   avatar_url: string;
@@ -9,4 +9,9 @@ export default interface UserData {
   organizations_url: string;
   repos_url: string;
   site_admin: false;
+}
+
+export default interface UserData {
+  total_count: number,
+  items: Array<UserType>
 }
