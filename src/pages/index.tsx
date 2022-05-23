@@ -34,7 +34,7 @@ const Home = (): React.ReactElement => {
             </div>
           ))}
         </div>
-        <Pagination totalSize={totalCount} limit={pageSize} changePage={setPage} currentPage={page} />
+        {!!totalCount && <Pagination totalSize={totalCount} limit={pageSize} changePage={setPage} currentPage={page} maxSize={1000} />}
       </div>
     </div>
   );

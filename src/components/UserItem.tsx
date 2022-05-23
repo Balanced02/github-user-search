@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { UserType } from "../types/UserData";
+
 const UserItem = ({ avatar_url, login, repos_url }: UserType) => {
   const viewRepo = () => {
     window.location.href = repos_url;
@@ -10,7 +11,7 @@ const UserItem = ({ avatar_url, login, repos_url }: UserType) => {
       <div className="card-body">
         <div className="row">
           <div className="col">
-            <img src={avatar_url} className="img-thumbnail" alt={login}></img>
+            <img src={avatar_url} loading="lazy" className="img-thumbnail" alt={login}></img>
           </div>
           <div className="col">
             <p>

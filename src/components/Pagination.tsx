@@ -6,6 +6,7 @@ type Props = {
   limit: number;
   currentPage: number;
   changePage: (page: number) => void;
+  maxSize?: number;
 };
 
 const Pagination = ({
@@ -13,10 +14,19 @@ const Pagination = ({
   limit,
   currentPage,
   changePage,
+  maxSize,
 }: Props): ReactElement => {
+
+  const maxResults = useMemo(() => {
+    if (maxSize && totalSize > maxSize) {
+      return maxSize
+    }
+    return totalSize
+  }, [totalSize, maxSize])
+
   const length = useMemo(
-    () => paginationLength(totalSize, limit),
-    [totalSize, limit]
+    () => paginationLength(maxResults, limit),
+    [maxResults, limit]
   );
 
   const paginationList = useMemo(() => {
