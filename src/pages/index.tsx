@@ -18,6 +18,7 @@ const Home = (): React.ReactElement => {
     <div className="container-fluid mt-3">
       <div className="card">
         <input
+          id="search-input"
           type="text"
           className="form-control"
           placeholder="Search for users"
@@ -34,7 +35,15 @@ const Home = (): React.ReactElement => {
             </div>
           ))}
         </div>
-        {!!totalCount && <Pagination totalSize={totalCount} limit={pageSize} changePage={setPage} currentPage={page} maxSize={1000} />}
+        {!!totalCount && (
+          <Pagination
+            totalSize={totalCount}
+            limit={pageSize}
+            changePage={setPage}
+            currentPage={page}
+            maxSize={1000}
+          />
+        )}
       </div>
     </div>
   );

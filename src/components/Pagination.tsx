@@ -44,6 +44,7 @@ const Pagination = ({
         <li
           className={`page-item ${currentPage === i && "active"}`}
           onClick={() => changePage(i)}
+          key={i}
         >
           <span className="page-link">{i}</span>
         </li>

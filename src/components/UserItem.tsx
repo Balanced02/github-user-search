@@ -7,7 +7,7 @@ const UserItem = ({ avatar_url, login, repos_url }: UserType) => {
   };
 
   return (
-    <div className="card user-item mb-3">
+    <div className="card user-item mb-3" data-testid="user-item">
       <div className="card-body">
         <div className="row">
           <div className="col">
